@@ -5,9 +5,9 @@ always @(posedge clk) begin
     case (state)
         S0: if (start) state <= S1;
         S1: state <= S2;
-        S2:  if (eq) state <= S5; else if(lt) state <= S3; else if(gt) state <= S4;
-        S3:  if (eq) state <= S5; else if(lt) state <= S3; else if(gt) state <= S4;
-        S4:  if (eq) state <= S5; else if(lt) state <= S3; else if(gt) state <= S4;
+        S2:  #2 if (eq) state <= S5; else if(lt) state <= S3; else if(gt) state <= S4;
+        S3:  #2 if (eq) state <= S5; else if(lt) state <= S3; else if(gt) state <= S4;
+        S4:  #2 if (eq) state <= S5; else if(lt) state <= S3; else if(gt) state <= S4;
         S5: state <= S3;
     endcase
 end
