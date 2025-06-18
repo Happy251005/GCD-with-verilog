@@ -12,8 +12,8 @@ end
 always #5 clk = ~clk;
 
 initial begin
-    #2 data_in = 143;
-    #10 data_in = 78;
+    #2 data_in = 115;
+    #10 data_in = 25;
 end
 initial begin
     $monitor($time, " A: %d, B: %d, Done: %b", d1.Aout, d1.Bout, done);
